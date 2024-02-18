@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <h1 class="title">what are you searching for?</h1>
+  <div class="container">
+    <a [routerLink]="redirect" class="product" [ngStyle]="{'background-color': color[i]}" *ngFor="let redirect of redirects, let i = index">
+      <h5>{{redirect}}</h5>
+    </a>
+  </div>
+</div>

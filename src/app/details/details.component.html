@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <h1>Details</h1>
+  <div class="container">
+    <table>
+      <tr *ngFor="let key of detailKey, let i = index">
+        <th>{{key}}</th>
+        <td> {{!detailValue[i] || detailValue[i].length == 0 ? '-' : isString(detailValue[i]) ? detailValue[i]
+          : ''}}
+          <span *ngIf="detailValue[i] && detailValue[i].length > 0 && !isString(detailValue[i])" (click)="dropdown = !dropdown"><span style="text-decoration: underline; cursor: pointer;">{{!dropdown ? 'See more' : 'close'}}</span><div *ngFor="let iterate of detailValue[i]"><span *ngIf="dropdown">{{toStringObject(iterate)}}</span></div></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

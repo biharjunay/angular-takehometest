@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 25px;
+}
+
+table {
+  text-align: left;
+  border-collapse: separate;
+  background-color: #ffc681;
+  padding: 15px;
+  box-shadow: 5px 5px 5px black;
+}
+table th {
+  text-transform: capitalize;
+}

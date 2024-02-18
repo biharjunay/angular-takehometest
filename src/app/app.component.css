@@ -1,0 +1,11 @@
+.btn-auth {
+  background-color: #40a9ff;
+  color: white;
+  border: none;
+  padding: 15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}

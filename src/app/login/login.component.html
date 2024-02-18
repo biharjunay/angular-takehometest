@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="title">
+      <h1>Login</h1>
+    </div>
+    <form (submit)="onSubmit($event)" [formGroup]="loginForm">
+      <input type="email" onfocus="" value="" placeholder="email" formControlName="email" (input)="onChange()">
+      <input type="password" value="" placeholder="password" formControlName="password" (input)="onChange()">
+      <span class="invalid" *ngIf="invalid">Invalid username or password</span>
+      <span style="text-align: center;">to check account <a href="" (click)="checkEmail()">Check</a></span>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

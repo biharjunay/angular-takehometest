@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="header">
+    <h1 class="title">{{product}}</h1>
+    <input type="text" name="" id="" placeholder="Search data" class="input" (input)="filterInput($event)">
+
+  </div>
+  <h5 class="loading" *ngIf="!productList">Loading</h5>
+  <table border="1" *ngIf="productList">
+    <tr>
+      <th>No</th>
+      <th *ngFor="let header of headers">{{header}}</th>
+      <th>Action</th>
+    </tr>
+    <tr
+      *ngFor="let prod of searchInput.length != 0 ? filteredList : productList | paginate: { itemsPerPage: 10, currentPage: p }, let i = index">
+      <td>{{10*(p-1)+1+i}}</td>
+      <td *ngFor="let data of headers, let j = index">
+        {{isObjectOfType(prod[headers[j]]) ? 'See Details' : prod[headers[j]]}}
+      </td>
+
+      <td><button type="button" [routerLink]="prod['id']">Get detail</button></td>
+    </tr>
+    <td [colSpan]="headers.length +2" *ngIf="filteredList.length == 0 && searchInput.length > 0"
+      style="text-align: center;">not found</td>
+  </table>
+  <pagination-controls (pageChange)="p = $event" *ngIf="searchInput.length == 0"/>
+</div>
